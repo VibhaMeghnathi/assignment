@@ -2,7 +2,7 @@ package com.assignment.htmscrapper.scrap.service.impl;
 
 import com.assignment.htmscrapper.scrap.pojo.Article;
 import com.assignment.htmscrapper.scrap.service.HtmlScrapperService;
-import com.assignment.htmscrapper.scrap.util.HtmlProcessing;
+import com.assignment.htmscrapper.scrap.util.HtmlParseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class HtmlScrapperImpl implements HtmlScrapperService {
     
     @PostConstruct
     public void fetchDataMap() {
-        map = HtmlProcessing.getMap();
+        map = HtmlParseUtil.getMap();
     }
     
     public Set<String> getAuthors() {
