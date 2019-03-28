@@ -28,12 +28,12 @@ private HtmlScrapperService htmlScraperService;
         return new ResponseEntity(new Gson().toJson(htmlScraperService.getAuthors()), HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/articles/{author}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/articles/{author}", method = RequestMethod.GET)
     public ResponseEntity<String> getArticlesByAuthors(@PathVariable("author") String authorName) {
         return new ResponseEntity(new Gson().toJson(htmlScraperService.getArticlesByAuthors(authorName)), HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/articles/{title}/{desc}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/articles/{title}/{desc}", method = RequestMethod.GET)
     public ResponseEntity<String> getArticleByTitleAndDecs(@PathVariable("title") String title, @PathVariable("desc") String desc) {
         return new ResponseEntity(new Gson().toJson(htmlScraperService.getArticleByTitleAndDesc(title, desc)), HttpStatus.OK);
     }
